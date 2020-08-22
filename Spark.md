@@ -1,5 +1,5 @@
 # Installing Spark
-Please ensure that you have first installed Hadoop before you install Spark. Also remember to perform these installations on the Hadoop user profile. Switch to Hadoop with ```su - hadoop```
+Please ensure that you have first installed Hadoop before you install Spark. Also remember to perform these installations in the home directory of the the Hadoop user profile. Switch to Hadoop with ```su - hadoop``` and then execute ```cd``` to reach the home directory.
 
 ## Install Scala and Git
 
