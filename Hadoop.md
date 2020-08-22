@@ -5,8 +5,8 @@ Make sure you execute everything from the home directory. Use ```cd``` to move t
 Start with updating your system. Use the following commands
 ```sh
 cd
-sudo apt-get update -y
-sudo apt-get upgrade -y
+sudo apt update -y
+sudo apt upgrade -y
 ```
 ## Install Java
 
