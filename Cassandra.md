@@ -1,4 +1,4 @@
-# Installing Cassandra
+# Cassandra Installation Guide
 Please ensure that you have first installed Hadoop before you install Cassandra. Also remember to perform these installations in the home directory of the the Hadoop user profile. Switch to Hadoop with ```su - hadoop``` and then execute ```cd``` to reach the home directory.
 
 ## Install the apt-transport-https Package
