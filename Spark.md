@@ -4,12 +4,12 @@ Please ensure that you have first installed Hadoop before you install Spark. Als
 ## Install Scala and Git
 
 Since we have already installed Java 8, we just need to install Scala and Git
-```sh
+```bash
 sudo apt install scala git -y
 ```
 
 Check the versions of all the installed packages so far with
-```sh
+```bash
 java -version
 javac -version
 scala -version
@@ -18,15 +18,15 @@ git --version
 
 ## Downloading Spark
 Download Spark compatible with the version of Hadoop on your system. Extract it and move it to ```opt/spark``` directory.
-```sh
-wget https://www.apache.org/dyn/closer.lua/spark/spark-3.0.1/spark-3.0.1-bin-hadoop3.2.tgz
+```bash
+wget https://downloads.apache.org/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz
 tar xvf spark-*
 sudo mv spark-3.0.1-bin-hadoop3.2 /opt/spark
 ```
 
 ## Configure Spark
 We need to configure a few environment variables. Execute the following
-```sh
+```bash
 echo "export SPARK_HOME=/opt/spark" >> ~/.profile
 echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
 echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
@@ -34,7 +34,7 @@ echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
 
 ## Starting Spark
 To start the Spark application, we need to navigate to the right directory and then convert all ```.sh``` scripts to an executable. We can then execute the start commands. 
-```sh
+```bash
 cd /opt/spark/sbin
 sudo chmod +x *.sh
 ```
@@ -49,20 +49,20 @@ You can view Spark on a browser, visit http://localhost:8080
 
 You can also use the Spark Shell to execute commands. First navigate to the right directory and then convert the required files to executables
 
-```sh
+```bash
 cd /opt/spark/bin
 sudo chmod +x pyspark 
 sudo chmod +x spark-shell
 ```
 
 Then execute the Spark Shell with Scala using 
-```sh
-spark-shell
+```bash
+./spark-shell
 ```
 Enter ```q``` to exit.
 
 Or, you can also access Spark using Python3 with
-```sh
-pyspark
+```bash
+./pyspark
 ```
 Leave the interface using ```exit()```
