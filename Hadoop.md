@@ -1,6 +1,6 @@
 # Hadoop Installation Guide
 
-Make sure you execute everything from the home directory. Use ```cd``` to move to home directory.
+Make sure you execute everything from the home directory. Use `cd` to move to home directory.
 
 Start with updating your system. Use the following commands
 ```bash
@@ -28,9 +28,12 @@ sudo apt install openssh-server openssh-client -y
 ```
 ## Create Hadoop User
 
-It is preferable to create a new Hadoop user to manage our clusters. We need to also provide sudo permissions to this account. It will require you to setup a name and password too. You can skip the rest of the fields by pressing the ```Enter``` key.
+It is preferable to create a new Hadoop user to manage our clusters. We need to also provide sudo permissions to this account. It will require you to setup a name and password too. You can skip the rest of the fields by pressing the `Enter` key.
 ```bash
 sudo adduser hadoop
+```
+Then add user `hadoop` to sudo
+```bash
 sudo adduser hadoop sudo
 ```
 
@@ -52,7 +55,7 @@ Verify passwordless SSH with
 ssh localhost
 ```
 
-Type ```exit``` to quit SSH.
+Type `exit` to quit SSH.
 
 ## Downloading Hadoop
 
@@ -110,7 +113,7 @@ export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
 export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
 ```
 
-Press ```Ctrl + S``` to save and then ```Ctrl + X``` to quit. Apply the changes with
+Press `Ctrl + S` to save and then `Ctrl + X` to quit. Apply the changes with
 ```bash
 source ~/.bashrc
 ```
@@ -120,7 +123,7 @@ Open the file with
 ```bash
 sudo nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 ```
-Scroll down until you find the commented line ```#export JAVA_HOME=```. Uncomment the line and replace the path with your Java path. The final line should look like this
+Scroll down until you find the commented line `#export JAVA_HOME=`. Uncomment the line and replace the path with your Java path. The final line should look like this
 ```bash
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64
 ```
@@ -174,7 +177,7 @@ Replace the existing configuration tags with the following
 </configuration>
 ```
 
-To create a multi-node setup, change the ```<value></value>``` attribute of ```dfs.replication``` to the number of nodes desired. Save and exit the file after making all the changes.
+To create a multi-node setup, change the `<value></value>` attribute of `dfs.replication` to the number of nodes desired. Save and exit the file after making all the changes.
 
 ### Setup mapred-site.xml
 
@@ -235,14 +238,28 @@ Before we start Hadoop for the first time, we need to format the namenode. Use t
 hdfs namenode -format
 ```
 
-A ```bashUTDOWN``` message will signify the end of the formatting process. <br>
+A `SHUTDOWN` message will signify the end of the formatting process.
+
 Congratulations! You have now installed Hadoop!
 
 ## Starting Hadoop
 
-Navigate to the required directory using ```cd hadoop-3.2.1/sbin/``` and then execute the following
+Navigate execute the following commands
+
 ```bash
+cd hadoop-3.2.1/sbin/
 ./start-all.sh
+```
+
+Type `jps` to find all the Java Processes. You should see 6 total processes, including the `jps` process. Note that the order of the items and the process IDs will be different.
+
+```bash
+2994 DataNode
+3219 SecondaryNameNode
+3927 Jps
+3431 ResourceManager
+2856 NameNode
+3566 NodeManager
 ```
 
 You can alternatively start the nodes and then the YARN resource manager manually using
@@ -251,12 +268,14 @@ You can alternatively start the nodes and then the YARN resource manager manuall
 ./start-yarn.sh
 ```
 
-Type ```jps``` to find all the Java Processes. You should see 6 total processes, including the Jps process.
-
 ## Access Hadoop from Browser
 You can access Hadoop on localhost on the following ports
 * NameNode - http://localhost:9870
 * DataNode - http://localhost:9864
 * YARN Manager - http://localhost:8088
 
-Remember to stop all processes using ```./stop-all.sh``` when you are done with your work.
+Remember to stop all processes when you are done with your work.
+
+```bash
+./stop-all.sh
+```
