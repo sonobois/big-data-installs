@@ -42,7 +42,6 @@ sudo chown -R $USER:$USER /home/$USER/dfsdata/namenode/
 
 
 # Setting up bashrc
-#!/bin/bash
 sudo echo "export HADOOP_HOME=/home/$USER/hadoop-3.2.1" >> ~/.bashrc
 source ~/.bashrc
 sudo echo "export HADOOP_INSTALL=$HADOOP_HOME" >> ~/.bashrc
