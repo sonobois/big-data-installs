@@ -1,5 +1,5 @@
 # big-data-installs
-Find the guides present as markdown files in the home directory. 
+Installing Hadoop and Spark on Linux for the Big Data course at PES University 
 
 # Installing Hadoop and Spark
 
