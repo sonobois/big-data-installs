@@ -58,13 +58,14 @@ source ~/.bashrc
 # Setting up hadoop-env.sh
 sudo rm $HADOOP_HOME/etc/hadoop/tmp-hadoop-env.sh
 sudo touch $HADOOP_HOME/etc/hadoop/tmp-hadoop-env.sh
+sudo chmod 777 $HADOOP_HOME/etc/hadoop/tmp-hadoop-env.sh
 
 while read line;
 do
-    if [ "$line" = "#export JAVA_HOME=" ]; then
-        sudo echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> tmp-hadoop-env.sh
+    if [ "$line" = "# export JAVA_HOME=" ]; then
+        sudo echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> $HADOOP_HOME/etc/hadoop/tmp-hadoop-env.sh
     else
-        sudo echo $line >> tmp-hadoop-env.sh
+        sudo echo $line >> $HADOOP_HOME/etc/hadoop/tmp-hadoop-env.sh
     fi
 done < $HADOOP_HOME/etc/hadoop/hadoop-env.sh
 
@@ -75,6 +76,7 @@ sudo mv $HADOOP_HOME/etc/hadoop/tmp-hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop
 # Setting up core-site.xml
 sudo rm $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
 sudo touch $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
+sudo chmod 777 $HADOOP_HOME/etc/hadoop/tmp-core-site.xml
 
 while read line;
 do
@@ -102,6 +104,7 @@ sudo mv $HADOOP_HOME/etc/hadoop/tmp-core-site.xml $HADOOP_HOME/etc/hadoop/core-s
 # Setting up hdfs-site.xml
 sudo rm $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
 sudo touch $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
+sudo chmod 777 $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml
 
 while read line;
 do
@@ -133,6 +136,7 @@ sudo mv $HADOOP_HOME/etc/hadoop/tmp-hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-s
 # Setting up mapred-site.xml
 sudo rm $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
 sudo touch $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
+sudo chmod 777 $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
 
 while read line;
 do
@@ -142,7 +146,7 @@ do
         sudo echo "    <name>mapreduce.framework.name</name>" >> $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
         sudo echo "    <value>yarn</value>" >> $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
         sudo echo "</property>" >> $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
-        sudo echo "</configuration" >> $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
+        sudo echo "</configuration>" >> $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
         break
     else
         sudo echo $line >> $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml
@@ -156,6 +160,7 @@ sudo mv $HADOOP_HOME/etc/hadoop/tmp-mapred-site.xml $HADOOP_HOME/etc/hadoop/mapr
 # Setting up yarn-site.xml
 sudo rm $HADOOP_HOME/etc/hadoop/tmp-yarn-site.xml
 sudo touch $HADOOP_HOME/etc/hadoop/tmp-yarn-site.xml
+sudo chmod 777 $HADOOP_HOME/etc/hadoop/tmp-yarn-site.xml
 
 while read line;
 do
@@ -199,7 +204,7 @@ hdfs namenode -format
 # Starting Hadoop Processes
 cd
 cd hadoop-3.2.1/sbin/
-sudo ./start-all.sh
+./start-all.sh
 
 
 # Checking Java Processes (should show 6 processes, including jps)
