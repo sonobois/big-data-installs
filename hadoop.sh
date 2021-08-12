@@ -27,8 +27,8 @@ chmod 0600 ~/.ssh/authorized_keys
 
 # Download Hadoop
 cd
-wget https://downloads.apache.org/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
-tar xzf /home/$USER/hadoop-3.2.1.tar.gz
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
+tar xzf /home/$USER/hadoop-3.2.2.tar.gz
 
 
 # Setting up Hadoop directories
@@ -42,7 +42,7 @@ sudo chown -R $USER:$USER /home/$USER/dfsdata/namenode/
 
 
 # Setting up bashrc
-sudo echo "export HADOOP_HOME=/home/$USER/hadoop-3.2.1" >> ~/.bashrc
+sudo echo "export HADOOP_HOME=/home/$USER/hadoop-3.2.2" >> ~/.bashrc
 source ~/.bashrc
 sudo echo "export HADOOP_INSTALL=$HADOOP_HOME" >> ~/.bashrc
 sudo echo "export HADOOP_MAPRED_HOME=$HADOOP_HOME" >> ~/.bashrc
@@ -203,7 +203,7 @@ hdfs namenode -format
 
 # Starting Hadoop Processes
 cd
-cd hadoop-3.2.1/sbin/
+cd hadoop-3.2.2/sbin/
 ./start-all.sh
 
 
