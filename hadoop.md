@@ -61,8 +61,8 @@ Type `exit` to quit SSH.
 
 Use any mirror link to get the download url. Download and extract hadoop using the following commands
 ```bash
-wget https://downloads.apache.org/hadoop/common/hadoop-3.2.1/hadoop-3.2.1.tar.gz
-tar xzf hadoop-3.2.1.tar.gz
+wget https://downloads.apache.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
+tar xzf hadoop-3.2.2.tar.gz
 ```
 
 ## Single Node Deployment
@@ -102,7 +102,7 @@ sudo nano ~/.bashrc
 Scroll to the bottom of the file. Copy and paste these statements right at the bottom.
 ```bash
 #Hadoop Related Options
-export HADOOP_HOME=/home/hadoop/hadoop-3.2.1
+export HADOOP_HOME=/home/hadoop/hadoop-3.2.2
 export HADOOP_INSTALL=$HADOOP_HOME
 export HADOOP_MAPRED_HOME=$HADOOP_HOME
 export HADOOP_COMMON_HOME=$HADOOP_HOME
@@ -247,7 +247,7 @@ Congratulations! You have now installed Hadoop!
 Navigate execute the following commands
 
 ```bash
-cd hadoop-3.2.1/sbin/
+cd hadoop-3.2.2/sbin/
 ./start-all.sh
 ```
 
