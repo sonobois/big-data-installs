@@ -9,9 +9,9 @@ sudo apt install scala git -y
 
 
 # Downloading and setting up Spark
-wget https://downloads.apache.org/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz
-tar xzf spark-3.1.1-bin-hadoop3.2.tgz
-sudo mv spark-3.1.1-bin-hadoop3.2 /opt/spark
+wget https://downloads.apache.org/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
+tar xzf spark-3.1.2-bin-hadoop3.2.tgz
+sudo mv spark-3.1.2-bin-hadoop3.2 /opt/spark
 
 
 # Configuring Spark

@@ -22,9 +22,9 @@ git --version
 Download Spark compatible with the version of Hadoop on your system. Extract it and move it to `opt/spark` directory.
 
 ```bash
-wget https://downloads.apache.org/spark/spark-3.1.1/spark-3.1.1-bin-hadoop3.2.tgz
-tar xvf spark-3.1.1-bin-hadoop3.2.tgz
-sudo mv spark-3.1.1-bin-hadoop3.2 /opt/spark
+wget https://downloads.apache.org/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
+tar xvf spark-3.1.2-bin-hadoop3.2.tgz
+sudo mv spark-3.1.2-bin-hadoop3.2 /opt/spark
 ```
 
 ## Configure Spark
