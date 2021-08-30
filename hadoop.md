@@ -2,6 +2,10 @@
 
 Make sure you execute everything from the home directory. Use `cd` to move to home directory.
 
+Note that the username here is `hadoop`. You need to set this to your system username (which should be your SRN).
+
+Change any `/home/hadoop/` to `/home/<your username>/`
+
 Start with updating your system. Use the following commands
 ```bash
 cd
@@ -25,21 +29,6 @@ javac -version
 We now need to setup a passwordless SSH
 ```bash
 sudo apt install openssh-server openssh-client -y
-```
-## Create Hadoop User
-
-It is preferable to create a new Hadoop user to manage our clusters. We need to also provide sudo permissions to this account. It will require you to setup a name and password too. You can skip the rest of the fields by pressing the `Enter` key.
-```bash
-sudo adduser hadoop
-```
-Then add user `hadoop` to sudo
-```bash
-sudo adduser hadoop sudo
-```
-
-Now change users with 
-```bash
-su - hadoop
 ```
 
 ## Enable passwordless SSH
@@ -85,7 +74,7 @@ mkdir tmpdata
 mkdir dfsdata/datanode
 mkdir dfsdata/namenode
 ```
-Change permissions using
+Change permissions using the following commands. Remember to replace `hadoop` with your username.
 
 ```bash
 sudo chown -R hadoop:hadoop /home/hadoop/dfsdata/
