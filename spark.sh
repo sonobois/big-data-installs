@@ -23,4 +23,11 @@ sudo echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
 # Starting Spark
 cd /opt/spark/sbin
 sudo chmod +x *.sh
+
+cd /opt/spark/bin
+sudo chmod +x pyspark 
+sudo chmod +x spark-shell
+sudo chmod +x spark-submit
+
+
 ./start-all.sh
