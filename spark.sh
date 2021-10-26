@@ -18,7 +18,7 @@ sudo mv spark-3.1.2-bin-hadoop3.2 /opt/spark
 sudo echo "export SPARK_HOME=/opt/spark" >> ~/.profile
 sudo echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
 sudo echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
-
+sudo source ~/.profile
 
 # Starting Spark
 cd /opt/spark/sbin

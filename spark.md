@@ -34,6 +34,7 @@ We need to configure a few environment variables. Execute the following
 echo "export SPARK_HOME=/opt/spark" >> ~/.profile
 echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.profile
 echo "export PYSPARK_PYTHON=/usr/bin/python3" >> ~/.profile
+sudo source ~/.profile
 ```
 
 ## Starting Spark
