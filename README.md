@@ -1,9 +1,9 @@
 # big-data-installs
-Installing Hadoop and Spark on Linux for the Big Data course at PES University 
+Installing Big Data frameworks 
 
-# Installing Hadoop and Spark
+## Usage
 
-Hadoop and Spark can be installed by either following the step-by-step instructions in the markdown files, or by simply executing the shell scripts provided. 
+Hadoop and the other scripts can be installed by either following the step-by-step instructions in the markdown files, or by simply executing the shell scripts provided. 
 
 First provide all shell scripts the necessary permissions.
 ```bash
@@ -12,12 +12,10 @@ chmod +x *.sh
 
 Then run the following commands to install the required tools.
 
-## Hadoop
 ```bash
-. hadoop.sh
+. <script-name>.sh
 ```
-
-## Spark
+Example:
 ```bash
 . spark.sh
 ```
